@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Story Generator</title>
+    <title>AI Story & Video Generator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="container flex flex-col gap-5">
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-4">AI Story Generator</h1>
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-4">AI Story & Video Generator</h1>
 
         <div class="flex flex-col gap-3">
             <label for="storyPrompt" class="text-gray-700 font-medium text-lg">Enter your story prompt or theme:</label>
@@ -28,16 +28,39 @@
 
         <button id="generateStoryBtn">Generate Story</button>
 
-        <div id="loadingIndicator" class="loading-indicator">Generating story, please wait...</div>
+        <div id="loadingIndicatorStory" class="loading-indicator hidden">Generating story, please wait...</div>
 
         <div class="flex flex-col gap-3">
             <label class="text-gray-700 font-medium text-lg">Generated Story:</label>
             <textarea id="generatedStory" class="story-output w-full" readonly placeholder="Your generated story will appear here..."></textarea>
         </div>
 
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button id="readStoryBtn" class="flex-1" disabled>Read Story Aloud</button>
+            <button id="stopReadingBtn" class="flex-1" disabled>Stop Reading</button>
+            <button id="generateVideoBtn" class="flex-1" disabled>Generate Video</button>
+        </div>
+        
+        <div id="loadingIndicatorVideo" class="loading-indicator hidden">Generating video, this may take a moment...</div>
+
+        <div id="videoOutput" class="hidden mt-4 text-center">
+            <p class="text-gray-700 font-medium mb-2">Generated Video (Conceptual URL):</p>
+            <a id="videoLink" href="#" target="_blank" class="text-indigo-600 hover:text-indigo-800 underline break-words"></a>
+        </div>
+
         <div id="messageBox" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md relative" role="alert">
             <strong class="font-bold">Error!</strong>
             <span class="block sm:inline" id="messageText"></span>
+        </div>
+
+        <div class="text-sm text-gray-500 mt-4 p-3 border-t border-gray-200">
+            <p class="font-semibold mb-1">How This Works:</p>
+            <ul class="list-disc list-inside">
+                <li>This web app (frontend) communicates with a **separate Python backend server** running on your local machine.</li>
+                <li>The backend handles secure API calls to generative AI models (Gemini for stories, etc.).</li>
+                <li>**Video generation is conceptual** in the backend; actual video file creation and social media posting requires installing tools like FFmpeg and integrating with cloud services on your backend server.</li>
+                <li>Ensure your Python backend is running before using the "Generate Story" or "Generate Video" buttons.</li>
+            </ul>
         </div>
     </div>
 
