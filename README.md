@@ -55,6 +55,7 @@ A web application that uses **Generative AI** to create engaging stories based o
 ## 📁 Project Structure
 
 ai_story_generator/
+
 ├── frontend/
 │ ├── index.html
 │ ├── style.css
@@ -115,11 +116,17 @@ python -m http.server 8000
 http://localhost:8000/index.html
 
 🔮 Future Enhancements
+
 🎥 Full Video Generation via FFmpeg and real TTS/Image tools.
+
 🖼 Scene Matching Visuals per paragraph/scene.
+
 🎵 Background Music Options and UI controls.
+
 ☁️ Database Support for storing user history.
+
 📲 Social Media Integration (YouTube, Instagram).
+
 👤 User Login & Saved Stories with personalization.
 
 
