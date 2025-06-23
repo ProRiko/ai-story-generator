@@ -1,0 +1,91 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start to make room for scrollable content */
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+textarea, input[type="text"] {
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    color: #374151;
+    transition: all 0.2s ease-in-out;
+    resize: vertical; /* Allow vertical resize for textareas */
+}
+textarea:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: #6366f1; /* Indigo-500 */
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+button {
+    background-color: #6366f1; /* Indigo-500 */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+    border: none; /* Remove default button border */
+}
+button:hover {
+    background-color: #4f46e5; /* Indigo-600 */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(99, 102, 241, 0.4);
+}
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+}
+.story-output {
+    background-color: #f9fafb;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    min-height: 150px;
+    color: #4b5563;
+    line-height: 1.6;
+    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+}
+.loading-indicator {
+    display: none;
+    color: #6366f1;
+    font-weight: 500;
+    text-align: center;
+}
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+    .container {
+        padding: 20px;
+        gap: 15px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    textarea, input[type="text"] {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    .story-output {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}

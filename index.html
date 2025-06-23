@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Story Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="container flex flex-col gap-5">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-4">AI Story Generator</h1>
+
+        <div class="flex flex-col gap-3">
+            <label for="storyPrompt" class="text-gray-700 font-medium text-lg">Enter your story prompt or theme:</label>
+            <input type="text" id="storyPrompt" placeholder="e.g., A space explorer finds an ancient alien artifact" class="w-full">
+        </div>
+
+        <div class="flex flex-col gap-3">
+            <label for="storyLength" class="text-gray-700 font-medium text-lg">Desired Length:</label>
+            <select id="storyLength" class="w-full border border-gray-300 rounded-lg p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <option value="short">Short (1-2 paragraphs)</option>
+                <option value="medium">Medium (3-5 paragraphs)</option>
+                <option value="long">Long (6+ paragraphs)</option>
+            </select>
+        </div>
+
+        <button id="generateStoryBtn">Generate Story</button>
+
+        <div id="loadingIndicator" class="loading-indicator">Generating story, please wait...</div>
+
+        <div class="flex flex-col gap-3">
+            <label class="text-gray-700 font-medium text-lg">Generated Story:</label>
+            <textarea id="generatedStory" class="story-output w-full" readonly placeholder="Your generated story will appear here..."></textarea>
+        </div>
+
+        <div id="messageBox" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md relative" role="alert">
+            <strong class="font-bold">Error!</strong>
+            <span class="block sm:inline" id="messageText"></span>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>
